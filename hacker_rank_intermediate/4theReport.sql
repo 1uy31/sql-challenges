@@ -5,7 +5,7 @@ CASE
     ELSE null  -- If Grade < 8, use null as Name
 END as Name, g.Grade, s.Marks
 FROM Students s
-LEFT JOIN Grades g ON s.Marks BETWEEN g.Min_Mark AND g.Max_Mark
+JOIN Grades g ON s.Marks BETWEEN g.Min_Mark AND g.Max_Mark
 ORDER BY g.Grade DESC,
 (CASE
     WHEN g.Grade >= 8 THEN Name
